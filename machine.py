@@ -6,7 +6,7 @@ class Machine():
 		self.started = False
 		self.running = False
 		self.finished = False
-		self.__initial = 
+		self.setInitial(initial)
 		self.__valid = True
 		self.__uniqueHistory = []
 		self.__history = []
@@ -25,7 +25,6 @@ class Machine():
 	def setInitial(self, initial):
 		if self.started:
 			raise Exception("Machine initial state cannot be set once machine is started")
-			return
 		self.__initial = initial
 
 	def start(self):
@@ -33,7 +32,7 @@ class Machine():
 			raise Exception("Machine cannot be started more than once")
 		self.stated = True
 		self.running = True
-		self.state = self.states[initial]
+		self.state = self.states[self.__initial]
 		self.__run()
 
 	def __run(self):

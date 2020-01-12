@@ -47,3 +47,9 @@ class State():
 		if self.transition is None:
 			raise Exception("The transition function must be defined first")
 		self.transitionCapture = transitionCapture
+
+	def __run(self, machine):
+		self.exe(machine, self.exeCapture)
+
+	def __runTransition(self, machine):
+		return self.transition(machine, self.transitionCapture)

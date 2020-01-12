@@ -9,15 +9,13 @@ This library is a flexible implementation of a state machine. It provides a safe
 #### Public Variables
 
 ```python
-self.name - The name of the state
-self.exe - The execution function of the state
-self.transition - The transition function of the state
 ```
 
 #### Public Methods
 
 ```python
 self.setName(name) - Sets the name of the state
+self.getName() - Returns the name of the state
 self.setExe(f) - Sets the state execution function
 self.setExeCapture(c) - Sets the closure for the execution function
 self.setTransition(f) - Sets the state transition function
@@ -40,6 +38,8 @@ self.finished - (Bool) True if the machine is finished running, False otherwise
 #### Public Methods
 
 ```python
-__init__(states={}) - Creates a state machine object
-start() - Runs the state machine
+__init__(states=[], initial=None) - Creates a state machine object
+setStates(states) - Sets the machine states
+setInitial(initial) - Sets the initial state
+start() - Starts the state machine
 ```
